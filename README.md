@@ -8,8 +8,8 @@
 
 ### Screenshot
 
-|                                          |                                           |
-| ---------------------------------------- | ----------------------------------------- |
-| ![Login](Screenshots/Login.png)          | ![Dashboard](Screenshots/dashboard.png)   |
-| ![Income](Screenshots/tambah_income.png) | ![Outcome](Screenshots/tambah_income.png) |
-| ![Cash Flow](Screenshots/cashflow.png)   | ![Setting](Screenshots/setting.png)       |
+|                                          |                                            |
+| ---------------------------------------- | ------------------------------------------ |
+| ![Login](Screenshots/Login.png)          | ![Dashboard](Screenshots/dashboard.png)    |
+| ![Income](Screenshots/tambah_income.png) | ![Outcome](Screenshots/tambah_outcome.png) |
+| ![Cash Flow](Screenshots/cashflow.png)   | ![Setting](Screenshots/setting.png)        |
