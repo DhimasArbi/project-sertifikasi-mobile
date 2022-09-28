@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".DetailCashFlowActivity">
+    tools:context=".main.DetailCashFlowActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Detail Cash Flow"
         android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"
         android:textSize="23sp"
         android:textStyle="bold" />
 
@@ -32,8 +33,8 @@
             android:layout_height="match_parent"
             android:layout_above="@id/kembali"
             android:layout_alignParentTop="true"
-            android:divider="#000000"
-            android:dividerHeight="3dp"/>
+            android:divider="@color/black"
+            android:dividerHeight="2dp"/>
 
         <Button
             android:id="@+id/kembali"

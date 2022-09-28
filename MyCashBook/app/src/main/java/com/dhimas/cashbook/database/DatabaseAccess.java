@@ -13,7 +13,7 @@ public class DatabaseAccess {
     Cursor c = null;
 
     private DatabaseAccess(Context context){
-        this.openHelper = new Helper(context);
+        this.openHelper = new DatabaseHelper(context);
     }
 
     public static DatabaseAccess getInstance(Context context){
@@ -67,7 +67,7 @@ public class DatabaseAccess {
 
     //get data from table
     public Cursor SumGroup(String field, String table){
-        return db.rawQuery("SELECT SUM(" + field +") AS result, createddate FROM " + table + " GROUP BY createddate", null);
+        return db.rawQuery("SELECT SUM(" + field +") AS result, tanggal FROM " + table + " GROUP BY createddate", null);
     }
 
     //get specific data from table
@@ -97,9 +97,12 @@ public class DatabaseAccess {
         ContentValues contentValues = new ContentValues();
         contentValues.put("jumlah", jumlah);
         contentValues.put("keterangan", keterangan);
-        contentValues.put("createddate", tanggal);
+        contentValues.put("tanggal", tanggal);
         contentValues.put("flow", flow);
-        long result = db.insert("money", null, contentValues);
+        long result = db.insert("keuangan", null, contentValues);
         return result != -1;
+    }
+    public Cursor getGraphData(String table, String where) {
+        return db.rawQuery("SELECT tanggal, jumlah FROM " + table + " WHERE " + where+ " ORDER BY tanggal ASC", null);
     }
 }

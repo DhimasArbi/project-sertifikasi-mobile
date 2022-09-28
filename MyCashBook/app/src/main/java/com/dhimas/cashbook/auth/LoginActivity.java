@@ -1,4 +1,4 @@
-package com.dhimas.cashbook;
+package com.dhimas.cashbook.auth;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.dhimas.cashbook.main.DashboardActivity;
+import com.dhimas.cashbook.R;
 import com.dhimas.cashbook.database.DatabaseAccess;
 
 
@@ -64,13 +67,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void cekUser() {
-        DatabaseAccess dataBaseAccess = DatabaseAccess.getInstance(LoginActivity.this);
-        dataBaseAccess.open();
+        DatabaseAccess dbaccesss = DatabaseAccess.getInstance(LoginActivity.this);
+        dbaccesss.open();
 
-        Cursor data = dataBaseAccess.Get("user");
+        Cursor data = dbaccesss.Get("user");
 
         if(data.getCount() == 0){
-            boolean isInserted = dataBaseAccess.insertUser("USER", "user");
+            boolean isInserted = dbaccesss.insertUser("USER", "user");
 
             if(isInserted){
                 Toast.makeText(LoginActivity.this, "User Dibuat", Toast.LENGTH_SHORT).show();

@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/drawable/round_button.xml" value="0.1475" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_cashflow_detail.xml" value="0.1" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_dashboard.xml" value="0.16666666666666666" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_income.xml" value="0.1" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_outcome.xml" value="0.1" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/activity_setting.xml" value="0.16666666666666666" />
+        <entry key="..\:/DIPA/MyCashBook-dhimas/MyCashBook/app/src/main/res/layout/listview_detail_cashflow.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/AndroidStudioProjects/MyCashBook/app/src/main/res/drawable/btn.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/AndroidStudioProjects/MyCashBook/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1505" />
         <entry key="..\:/Users/dhimas/AndroidStudioProjects/MyCashBook/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.1505" />

@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:background="@drawable/image_border"
+    android:layout_margin="5dp"
+    android:background="@color/white"
     android:orientation="horizontal"
     android:padding="5dp"
     android:weightSum="5">
@@ -20,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="[ + ] Rp. 250000"
-            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-black"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
@@ -29,7 +28,7 @@
             android:id="@+id/keterangan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-medium"
             android:text="Dapat bayaran"
             android:textSize="16sp"
             android:textColor="@color/black"/>
@@ -38,7 +37,7 @@
             android:id="@+id/tanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-light"
             android:textSize="15sp"
             android:text="28-10-2022"/>
     </LinearLayout>
