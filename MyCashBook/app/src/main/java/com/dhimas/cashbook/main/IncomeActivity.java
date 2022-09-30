@@ -75,8 +75,14 @@ public class IncomeActivity extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nominal.getText().toString().equals("") || keterangan.getText().toString().equals("")){
+                if(nominal.getText().toString().equals("") && keterangan.getText().toString().equals("")){
                     Toast.makeText(IncomeActivity.this, "Nominal dan Keterangan Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }else if(nominal.getText().toString().equals("")){
+                    Toast.makeText(IncomeActivity.this, "Nominal Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }else if(keterangan.getText().toString().equals("")){
+                    Toast.makeText(IncomeActivity.this, "Keterangan Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }else if(nominal.getText().toString().length() < 3){
+                    Toast.makeText(IncomeActivity.this, "Nominal dalam bentuk Rupiah, minimal Rp. 100", Toast.LENGTH_SHORT).show();
                 } else {
                     Integer jumlah = Integer.valueOf(nominal.getText().toString());
                     DatabaseAccess dbacess = DatabaseAccess.getInstance(IncomeActivity.this);

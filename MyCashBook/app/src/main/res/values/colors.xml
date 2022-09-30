@@ -10,4 +10,7 @@
     <color name="red">#FF0000</color>
     <color name="limegreen">#32CD32</color>
     <color name="darkgrey">#A9A9A9</color>
+    <color name="cartitem">#F7F8FB</color>
+    <color name="arrowright">#CF2A27</color>
+    <color name="arrowleft">#009E0F</color>
 </resources>

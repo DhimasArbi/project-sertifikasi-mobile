@@ -6,6 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.dhimas.cashbook.main.model.DetailModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
@@ -45,37 +50,50 @@ public class DatabaseAccess {
         return db.rawQuery("DELETE FROM " + table, null);
     }
 
-    //delete specific record in table
-    public boolean DeleteWhere(String table, String where){
-        return db.delete(table, where, null) > 0;
+    public void hapusDataKeuangan(DetailModel detailModel) {
+        this.db.delete("keuangan", "id =? ", new String[]{String.valueOf(detailModel.getId())});
+        this.db.close();
     }
 
-    //get specific data from table
-    public Cursor DistinctWhere(String table, String where){
-        return db.rawQuery("SELECT DISTINCT orderedDate FROM " + table + " WHERE " + where, null);
+    public void tambahKeuangan(DetailModel detailModel){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("jumlah", detailModel.getNominal());
+        contentValues.put("keterangan", detailModel.getKeterangan());
+        contentValues.put("tanggal", detailModel.getTanggal());
+        contentValues.put("flow", detailModel.getFlow());
+        this.db.insert("keuangan", null, contentValues);
+        this.db.close();
     }
-
-    //get data from table
+    //ambil semua data dari tabel
     public Cursor Get(String table){
         return db.rawQuery("SELECT * FROM " + table, null);
     }
 
-    //get data from table
+    public List<DetailModel> getDataKeuangan(){
+        List<DetailModel> list = new ArrayList<>();
+        String selectKeuangan = "SELECT * FROM keuangan";
+        open();
+        Cursor cursor = this.db.rawQuery(selectKeuangan, null);
+        if (cursor.moveToFirst()){
+            do {
+                DetailModel data = new DetailModel(cursor.getInt(0),cursor.getInt(1),cursor.getString(2), cursor.getString(3),cursor.getString(4));
+                list.add(data);
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+    //ambil data jumlah dari tabel
     public Cursor Sum(String field, String table, String where){
         return db.rawQuery("SELECT SUM(" + field +") AS result FROM " + table + " WHERE " + where, null);
     }
 
-    //get data from table
-    public Cursor SumGroup(String field, String table){
-        return db.rawQuery("SELECT SUM(" + field +") AS result, tanggal FROM " + table + " GROUP BY createddate", null);
-    }
-
-    //get specific data from table
+    //mengambil data dengan kondisi tertentu
     public Cursor Where(String table, String where){
         return db.rawQuery("SELECT * FROM " + table + " WHERE " + where, null);
     }
 
-    //insert value into table
+    //menambahkan user
     public boolean insertUser(String username, String password){
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
@@ -84,7 +102,7 @@ public class DatabaseAccess {
         return result != -1;
     }
 
-    //update value into table
+    //mengupdate data user(password, username)
     public boolean updateUser(String password, String username){
         ContentValues contentValues = new ContentValues();
         contentValues.put("password", password);
@@ -92,7 +110,7 @@ public class DatabaseAccess {
         return result != -1;
     }
 
-    //insert value into table
+    //memasukkan data ke tabel keuangan
     public boolean insertMoney(Integer jumlah, String keterangan, String tanggal, String flow){
         ContentValues contentValues = new ContentValues();
         contentValues.put("jumlah", jumlah);
@@ -101,8 +119,5 @@ public class DatabaseAccess {
         contentValues.put("flow", flow);
         long result = db.insert("keuangan", null, contentValues);
         return result != -1;
-    }
-    public Cursor getGraphData(String table, String where) {
-        return db.rawQuery("SELECT tanggal, jumlah FROM " + table + " WHERE " + where+ " ORDER BY tanggal ASC", null);
     }
 }

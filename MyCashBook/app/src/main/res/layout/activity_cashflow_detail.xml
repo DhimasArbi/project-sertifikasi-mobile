@@ -27,23 +27,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/listView"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/kembali"
             android:layout_alignParentTop="true"
-            android:divider="@color/black"
-            android:dividerHeight="2dp"/>
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:padding="5dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/kembali"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/round_button"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/black"
             android:text="kembali"
             android:textColor="@color/white"
             android:textAllCaps="true"/>

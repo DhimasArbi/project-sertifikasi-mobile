@@ -31,26 +31,32 @@ public class SettingActivity extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(oldpassword.getText().toString().equals("") || newpassword.getText().toString().equals("") || confirmation.getText().toString().equals("")){
+                if(oldpassword.getText().toString().equals("") && newpassword.getText().toString().equals("") && confirmation.getText().toString().equals("")){
                     oldpassword.setError("");
                     newpassword.setError("");
                     confirmation.setError("");
                     Toast.makeText(SettingActivity.this, "Lengkapi Data Anda", Toast.LENGTH_SHORT).show();
-                } else {
-                    if(!newpassword.getText().toString().equals(confirmation.getText().toString()) || newpassword.getText().toString().equals("")){
+                } else if(newpassword.getText().toString().equals("")){
+                    newpassword.setError("");
+                    Toast.makeText(SettingActivity.this, "Password Baru Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }else if(confirmation.getText().toString().equals("")){
+                    confirmation.setError("");
+                    Toast.makeText(SettingActivity.this, "Konfirmasi Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }else {
+                    if(!newpassword.getText().toString().equals(confirmation.getText().toString())){
                         newpassword.setError("");
                         confirmation.setError("");
-                        Toast.makeText(SettingActivity.this, "Password Baru dan Konfirmasi Tidak Sama / Kosong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingActivity.this, "Password Baru dan Konfirmasi Tidak Sama", Toast.LENGTH_SHORT).show();
                     } else {
                         DatabaseAccess dataBaseAccess = DatabaseAccess.getInstance(SettingActivity.this);
                         dataBaseAccess.open();
 
-                        Cursor data = dataBaseAccess.Where("user", "username = 'USER' AND password ='" + oldpassword.getText().toString() + "'");
+                        Cursor data = dataBaseAccess.Where("user", "username = 'user' AND password ='" + oldpassword.getText().toString() + "'");
 
                         if (data.getCount() == 0) {
                             Toast.makeText(SettingActivity.this, "Password Lama yang Anda Masukkan Salah", Toast.LENGTH_SHORT).show();
                         } else {
-                            boolean isUpdated = dataBaseAccess.updateUser(newpassword.getText().toString(), "USER");
+                            boolean isUpdated = dataBaseAccess.updateUser(newpassword.getText().toString(), "user");
 
                             if(isUpdated){
                                 Toast.makeText(SettingActivity.this, "Password Anda Berhasil Diganti", Toast.LENGTH_SHORT).show();

@@ -1,53 +1,66 @@
 package com.dhimas.cashbook.main.adapter;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.dhimas.cashbook.R;
+import com.dhimas.cashbook.main.model.DetailModel;
 
-public class DetailAdapter extends ArrayAdapter {
-    Integer[] Nominal;
-    String[] Keterangan, Tanggal, Flow;
+import java.util.ArrayList;
+import java.util.List;
 
-    public DetailAdapter(@NonNull Context context, Integer[] Nominal, String[] Keterangan, String[] Tanggal, String[] Flow){
-        super(context, R.layout.listview_detail_cashflow, R.id.tanggal, Tanggal);
-        this.Nominal = Nominal;
-        this.Keterangan = Keterangan;
-        this.Tanggal = Tanggal;
-        this.Flow = Flow;
+public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailHolder> {
+    List<DetailModel> detailModels = new ArrayList<>();
+
+    public DetailAdapter(List<DetailModel> detailModels){
+        this.detailModels = detailModels;
     }
 
-    @SuppressLint("SetTextI18n")
-    public View getView(final int position, View converView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        @SuppressLint("ViewHolder") View row = inflater.inflate(R.layout.listview_detail_cashflow, parent, false);
+    @NonNull
+    @Override
+    public DetailHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_detail_cashflow, parent, false);
+        return new DetailHolder(view);
+    }
 
-        TextView tvNominal = row.findViewById(R.id.nominal);
-        TextView tvKeterangan = row.findViewById(R.id.keterangan);
-        TextView tvTanggal = row.findViewById(R.id.tanggal);
-        ImageView income = row.findViewById(R.id.income);
-        ImageView outcome = row.findViewById(R.id.outcome);
-
-        tvKeterangan.setText(Keterangan[position]);
-        tvTanggal.setText(Tanggal[position]);
-        if(Flow[position].equals("income")){
-            tvNominal.setText("[ + ] Rp. " + Nominal[position]);
-            income.setVisibility(View.VISIBLE);
-            outcome.setVisibility(View.GONE);
+    @Override
+    public void onBindViewHolder(DetailHolder holder, int position) {
+        holder.tvKeterangan.setText(detailModels.get(position).getKeterangan());
+        holder.tvTanggal.setText(detailModels.get(position).getTanggal());
+        if(detailModels.get(position).getFlow().equals("income")){
+            holder.tvNominal.setText("[ + ] Rp. " + detailModels.get(position).getNominal());
+            holder.income.setVisibility(View.VISIBLE);
+            holder.outcome.setVisibility(View.GONE);
         } else {
-            tvNominal.setText("[ - ] Rp. " + Nominal[position]);
-            income.setVisibility(View.GONE);
-            outcome.setVisibility(View.VISIBLE);
+            holder.tvNominal.setText("[ - ] Rp. " + detailModels.get(position).getNominal());
+            holder.income.setVisibility(View.GONE);
+            holder.outcome.setVisibility(View.VISIBLE);
         }
+    }
 
-        return row;
+    @Override
+    public int getItemCount() {
+        return detailModels.size();
+    }
+
+    class DetailHolder extends RecyclerView.ViewHolder {
+
+        TextView tvNominal, tvKeterangan, tvTanggal;
+        ImageView income, outcome;
+
+        public DetailHolder( View itemView) {
+            super(itemView);
+            tvNominal =  itemView.findViewById(R.id.nominal);
+            tvKeterangan = itemView.findViewById(R.id.keterangan);
+            tvTanggal = itemView.findViewById(R.id.tanggal);
+            income = itemView.findViewById(R.id.income);
+            outcome = itemView.findViewById(R.id.outcome);
+        }
     }
 }

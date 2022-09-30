@@ -30,20 +30,23 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         reset = findViewById(R.id.reset_password);
 
-        cekUser();
+        createUser();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("") || password.getText().toString().equals("")){
-                    username.setError("");
-                    password.setError("");
-                    Toast.makeText(LoginActivity.this, "Username atau Password Tidak Boleh Kosong!", Toast.LENGTH_SHORT).show();
+                if(username.getText().toString().equals("") && password.getText().toString().equals("")){
+                    username.setError("Username Tidak Boleh Kosong!");
+                    password.setError("Password Tidak Boleh Kosong!");
+                }else if(username.getText().toString().equals("")){
+                    username.setError("Username Tidak Boleh Kosong!");
+                }else if(password.getText().toString().equals("")){
+                    password.setError("Password Tidak Boleh Kosong!");
                 } else {
                     DatabaseAccess dbaccess = DatabaseAccess.getInstance(LoginActivity.this);
                     dbaccess.open();
 
-                    Cursor data = dbaccess.Where("user", "username = '" + username.getText().toString().toUpperCase() + "' AND password = '" + password.getText().toString() + "'");
+                    Cursor data = dbaccess.Where("user", "username = '" + username.getText().toString() + "' AND password = '" + password.getText().toString() + "'");
 
                     if(data.getCount() == 0){
                         Toast.makeText(LoginActivity.this, "Username atau Password Salah!", Toast.LENGTH_SHORT).show();
@@ -61,19 +64,19 @@ public class LoginActivity extends AppCompatActivity {
 
                 dbaccess.DeleteAll("user").getCount();
 
-                cekUser();
+                createUser();
             }
         });
     }
 
-    private void cekUser() {
+    private void createUser() {
         DatabaseAccess dbaccesss = DatabaseAccess.getInstance(LoginActivity.this);
         dbaccesss.open();
 
         Cursor data = dbaccesss.Get("user");
 
         if(data.getCount() == 0){
-            boolean isInserted = dbaccesss.insertUser("USER", "user");
+            boolean isInserted = dbaccesss.insertUser("user", "user");
 
             if(isInserted){
                 Toast.makeText(LoginActivity.this, "User Dibuat", Toast.LENGTH_SHORT).show();
