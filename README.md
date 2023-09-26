@@ -1,15 +1,24 @@
+# MyCashBook
+
 ## Data Diri
 
-|              |                               |
-| ------------ | ----------------------------- |
-| NIM          | **1941720169**                |
-| Nama Lengkap | **Dhimas Arbi Sukma Himawan** |
-| Kelas        | TI-4B                         |
+|               |                               |
+| ------------- | ----------------------------- |
+| Nama Lengkap  | **DHIMAS ARBI SUKMA HIMAWAN** |
+| NIM           | **1941720169**                |
+| Program Studi | **D4 TEKNIK INFORMATIKA**     |
+| Jurusan       | **TEKNOLOGI INFORMASI**       |
 
-### Screenshot
+## User Info
 
-|                                          |                                            |
-| ---------------------------------------- | ------------------------------------------ |
-| ![Login](Screenshots/Login.png)          | ![Dashboard](Screenshots/dashboard.png)    |
-| ![Income](Screenshots/tambah_income.png) | ![Outcome](Screenshots/tambah_outcome.png) |
-| ![Cash Flow](Screenshots/cashflow.png)   | ![Setting](Screenshots/setting.png)        |
+| User | Password |
+| ---- | -------- |
+| user | user     |
+
+## Screenshot
+
+|                                                                    |                                                                     |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| <img src="Screenshots/Login.png" width="300" height="600">         | <img src="Screenshots/dashboard.png" width="300" height="600">      |
+| <img src="Screenshots/tambah_income.png" width="300" height="600"> | <img src="Screenshots/tambah_outcome.png" width="300" height="600"> |
+| <img src="Screenshots/cashflow.png" width="300" height="600">      | <img src="Screenshots/setting.png" width="300" height="600">        |
