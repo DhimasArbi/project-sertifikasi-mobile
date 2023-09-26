@@ -76,12 +76,17 @@ public class LoginActivity extends AppCompatActivity {
         Cursor data = dbaccesss.Get("user");
 
         if(data.getCount() == 0){
-            boolean isInserted = dbaccesss.insertUser("user", "user");
+            String[] usernames = {"user", "admin"};
+            String[] passwords = {"user", "admin"};
 
-            if(isInserted){
-                Toast.makeText(LoginActivity.this, "User Dibuat", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(LoginActivity.this, "User Gagal Dibuat", Toast.LENGTH_SHORT).show();
+            for (int i = 0; i < usernames.length; i++) {
+                boolean isInserted = dbaccesss.insertUser(usernames[i], passwords[i]);
+
+                if (isInserted) {
+                    Toast.makeText(LoginActivity.this, "User " + usernames[i] + " Dibuat", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "User " + usernames[i] + " Gagal Dibuat", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
