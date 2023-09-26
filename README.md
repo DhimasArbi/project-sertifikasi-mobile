@@ -11,9 +11,10 @@
 
 ## User Info
 
-| User | Password |
-| ---- | -------- |
-| user | user     |
+| User  | Password |
+| ----- | -------- |
+| user  | user     |
+| admin | admin    |
 
 ## Screenshot
 
