@@ -8,7 +8,7 @@
     android:padding="10dp"
     tools:context=".main.SettingActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pengaturan"
@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -26,7 +26,7 @@
         android:textColor="@color/black"
         />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password Saat Ini"
@@ -34,7 +34,7 @@
         android:textSize="15sp"
         android:textStyle="bold"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/oldpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         android:inputType="textPassword"
         android:padding="10dp"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -50,7 +50,7 @@
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/newpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         android:inputType="textPassword"
         android:padding="10dp" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -66,7 +66,7 @@
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/confirmation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
         android:inputType="textPassword"
         android:padding="10dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/simpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
         android:textColorHighlight="#494747"
         android:textColorLink="#3F51B5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/kembali"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,12 +109,12 @@
             android:orientation="horizontal"
             android:background="@drawable/image_border">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="130dp"
-                android:layout_height="150dp"
+                android:layout_height="160dp"
+                android:background="@drawable/round"
                 android:scaleType="centerCrop"
-                android:src="@drawable/f1"
-                android:background="@drawable/round"/>
+                android:src="@drawable/foto_dhimas" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,17 +122,16 @@
                 android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="About This App.."
-                    android:layout_marginTop="5dp"
+                    android:text="Tentang aplikasi ini:"
                     android:fontFamily="monospace"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -140,19 +139,27 @@
                     android:fontFamily="monospace"
                     android:text="Aplikasi ini dibuat oleh: "
                     android:textColor="@color/black"/>
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:fontFamily="monospace"
-                    android:text="Nama: Dhimas Arbi Sukma Himawan"
+                    android:text="Dhimas Arbi Sukma Himawan"
                     android:textColor="@color/black"/>
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:fontFamily="monospace"
-                    android:text="NIM: 1941720169"
+                    android:text="1941720169"
+                    android:textColor="@color/black"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="DIV Teknik Informatika, Teknologi Informasi, Politeknik Negeri Malang"
                     android:textColor="@color/black"/>
             </LinearLayout>
         </LinearLayout>

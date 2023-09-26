@@ -8,7 +8,7 @@
     android:padding="10dp"
     tools:context=".main.OutcomeActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
@@ -18,7 +18,7 @@
         android:textStyle="bold"
         android:layout_marginBottom="25dp"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tanggal"
@@ -31,7 +31,7 @@
         android:orientation="horizontal"
         android:weightSum="5">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tanggal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:text="-"
             android:textStyle="bold"/>
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btntanggal"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
@@ -49,11 +49,10 @@
             android:layout_weight="1"
             android:background="@drawable/round"
             android:backgroundTint="@color/white"
-            android:padding="10dp"
-            android:src="@drawable/ic_baseline_date_range_24" />
+            android:src="@drawable/baseline_calendar_today_24" />
     </LinearLayout>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -61,14 +60,14 @@
         android:textStyle="bold"
         android:textColor="@color/black" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/nominal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
         android:inputType="number" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -76,7 +75,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/keterangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +87,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="15dp">
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/simpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,7 +98,7 @@
         android:textColor="@color/white"
         android:textAllCaps="true"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/kembali"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

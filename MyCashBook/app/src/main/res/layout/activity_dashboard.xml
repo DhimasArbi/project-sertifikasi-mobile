@@ -8,7 +8,7 @@
     android:padding="10dp"
     tools:context=".main.DashboardActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rangkuman Bulan Ini"
@@ -17,7 +17,7 @@
         android:textStyle="bold"
         android:gravity="center"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/outcome_cash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:textSize="18sp"
         android:gravity="center"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/income_cash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:textSize="18sp"
         android:gravity="center"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:scaleType="fitXY"
@@ -66,13 +66,13 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/wallet_in"
                 android:background="@drawable/image_border"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -92,13 +92,13 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/wallet_out"
                 android:background="@drawable/image_border"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -126,13 +126,13 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/money_flow"
                 android:background="@drawable/image_border"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -152,13 +152,13 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/setting"
                 android:background="@drawable/image_border"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
